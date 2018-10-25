@@ -44,7 +44,8 @@ seek:		 mov dl,[bx]
                call errr	
 			   
 load:		call RD_SECTOR
-               mov al,2h
+               in al,92h
+               or al,2h
                out 92h,al	;打开A20地址总线		   
 			  mov bx,7c00h
 			  push es
